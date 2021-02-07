@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: Arial;
+    color: #1a1a1a;
+}
+
+[data-modal] {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+[data-modal] > form {
+    position: relative;
+    padding: 30px;
+    background: #fff;
+    max-width: 500px;
+}
+
+[data-close] {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #f00;
+    padding: 3px 10px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+[data-close]:hover {
+    background: #d00;
+    transform: rotate(90deg);
+}
+
+[data-modal] > form > h3 {
+    margin-bottom: 10px;
+    color: #5d5d5d;
+    font-size: 28px;
+    text-align: center;
+}
+
+[data-modal] > form p {
+    margin: 10px 0px;
+    font-size: 15px;
+    color: #666;
+    width: 100%;
+}
+
+[data-modal] > form > input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+[data-modal] > form > .sex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[data-modal] > form > .sex > label {
+    margin-right: 12px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+[data-modal] > form > .sex > label > input {
+    margin-right: 6px;
+    cursor: pointer;
+    position: relative;
+}
+
+[data-modal] > form > .sex > label > input::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background: rgb(13, 143, 250);
+}
+
+[data-modal] > form > .sex > label > input::after {
+    display: none;
+    content: '✔';
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    width: 15px;
+    height: 15px;
+    color: #fff;
+}
+
+[data-modal] > form > .sex > label > input:checked::after {
+    display: block;
+}
+
+[data-modal] > form > .birthday {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+[data-modal] > form > .birthday > select {
+    padding: 7px 10px;
+    flex-basis: 32.5%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+[data-modal] > form > #file {
+    display: none;
+}
+
+[data-modal] > form > button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid rgb(13, 143, 250);
+    background: rgb(13, 143, 250);
+    color: #fff;
+}
+
+[data-modal] > form > input[type=submit] {
+    background: rgb(13, 189, 13);
+    border-color: rgb(13, 189, 13);
+    color: #fff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 520px) {
+    [data-modal] > form {
+        padding: 20px;
+        margin: 0px 15px;
+    }
+
+    
+    [data-modal] > form > .birthday > select {
+        flex-basis: 30%;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    [data-modal] > form {
+        font-size: 15px;
+    }
+    [data-modal] > form > .birthday > select {
+        flex-basis: 25%;
+    }
+
+    [data-modal] > form p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    [data-modal] > form > .birthday > select {
+        flex-basis: 100%;
+    }
+}
+
+.wrap_for_upload {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+
+.preview-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.preview-image.remove{
+    transform: scale(0);
+    transition: transform 0.5s;
+}
+
+.preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.preview-info {
+    display: none;
+}
+
+.preview-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 35px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    color: #d00;
+    padding: 5px 10px;
+}
+
+
+
+
